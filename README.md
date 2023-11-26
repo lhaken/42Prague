@@ -1,1 +1,1 @@
-# 42Prague
+![42Prague logo](Assets/42Prague_logo.png)
