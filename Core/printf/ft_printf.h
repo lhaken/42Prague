@@ -1,5 +1,5 @@
-#ifndef PRINTF_H
-# define LIBFT_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 /* INCLUDES */
 # include <unistd.h>

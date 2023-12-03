@@ -1,4 +1,4 @@
-#include "printf.h"
+#include "ft_printf.h"
 
 void	ft_putnbr(int n, int *cnt)
 {
