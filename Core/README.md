@@ -1,4 +1,4 @@
-# 42Prague Core curriculum
+# 42Prague Core curriculum 📓
 
 In this directory you can find projects I have done for the 42Prague Core curriculum.
 

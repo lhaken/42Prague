@@ -1,4 +1,4 @@
-# 42Prague Piscine
+# 42Prague Piscine 🌊
 
 In this directory you can find projects I have done for the 42Prague Piscine.
 
