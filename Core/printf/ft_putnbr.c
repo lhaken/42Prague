@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_putnbr(int n, int *cnt)
+void	ft_putnbr(int n, size_t *cnt)
 {
 	int				rem;
 	long long int	num;

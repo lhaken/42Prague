@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_putstr(char *s, int *cnt)
+void	ft_putstr(char *s, size_t *cnt)
 {
 	int	size;
 

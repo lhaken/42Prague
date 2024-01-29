@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void	ft_putunbr(unsigned int n, int *cnt)
+void	ft_putunbr(unsigned int n, size_t *cnt)
 {
 	unsigned int	rem;
 

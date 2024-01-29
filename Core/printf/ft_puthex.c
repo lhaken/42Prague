@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void    ft_puthex(unsigned int n, char *base, int *cnt)
+void    ft_puthex(unsigned int n, char *base, size_t *cnt)
 {
 	int	res;
 

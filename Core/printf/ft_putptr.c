@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static void	ft_convert_hex(unsigned long int n, int *cnt)
+static void	ft_convert_hex(unsigned long int n, size_t *cnt)
 {
 	char	*base;
 	int		res;
@@ -14,7 +14,7 @@ static void	ft_convert_hex(unsigned long int n, int *cnt)
 	write(1, &res, 1);
 }
 
-void	ft_putptr(void *ptr, int *cnt)
+void	ft_putptr(void *ptr, size_t *cnt)
 {
 	unsigned long int	p;
 

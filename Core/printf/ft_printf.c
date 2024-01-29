@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static void ft_handle(va_list vars, char *format, int *cnt)
+static void ft_handle(va_list vars, char *format, size_t *cnt)
 {
 	if (*format == 'c')
 		ft_putchar(va_arg(vars, int), cnt);
@@ -26,7 +26,7 @@ static void ft_handle(va_list vars, char *format, int *cnt)
 int	ft_printf(const char *format, ...)
 {
 	va_list	vars;
-	int		cnt;
+	size_t	cnt;
 
 	cnt = 0;
 	if (!format)
