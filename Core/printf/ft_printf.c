@@ -3,24 +3,24 @@
 static void ft_handle(va_list vars, char *format, size_t *cnt)
 {
 	if (*format == 'c')
-		ft_putchar(va_arg(vars, int), cnt);
+		return ft_putchar(va_arg(vars, int), cnt);
 	else if (*format == 's')
-		ft_putstr(va_arg(vars, char *), cnt);
+		return ft_putstr(va_arg(vars, char *), cnt);
 	else if (*format == 'p')
-		ft_putptr(va_arg(vars, void *), cnt);
+		return ft_putptr(va_arg(vars, void *), cnt);
 	else if (*format == 'd' || *format == 'i')
-		ft_putnbr(va_arg(vars, int), cnt);
+		return ft_putnbr(va_arg(vars, int), cnt);
 	else if (*format == 'u')
-		ft_putunbr(va_arg(vars, unsigned int), cnt);
+		return ft_putunbr(va_arg(vars, unsigned int), cnt);
 	else if (*format == 'x' || *format == 'X')
 	{	
 		if (*format == 'x')
-			ft_puthex(va_arg(vars, unsigned int), "0123456789abcdef", cnt);
+			return ft_puthex(va_arg(vars, unsigned int), "0123456789abcdef", cnt);
 		else
-			ft_puthex(va_arg(vars, unsigned int), "0123456789ABCDEF", cnt);
+			return ft_puthex(va_arg(vars, unsigned int), "0123456789ABCDEF", cnt);
 	}
 	else if (*format == '%')
-		ft_putchar(*format, cnt);
+		return ft_putchar(*format, cnt);
 }
 
 int	ft_printf(const char *format, ...)
