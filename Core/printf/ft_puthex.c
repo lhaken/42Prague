@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lhaken <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 21:34:14 by lhaken            #+#    #+#             */
+/*   Updated: 2024/02/01 21:34:26 by lhaken           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void    ft_puthex(unsigned int n, char *base, size_t *cnt)
+void	ft_puthex(unsigned int n, char *base, size_t *cnt)
 {
 	int	res;
 

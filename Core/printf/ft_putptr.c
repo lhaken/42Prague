@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lhaken <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 21:34:02 by lhaken            #+#    #+#             */
+/*   Updated: 2024/02/01 22:15:59 by lhaken           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 static void	ft_convert_hex(unsigned long int n, size_t *cnt)
@@ -18,13 +30,16 @@ void	ft_putptr(void *ptr, size_t *cnt)
 {
 	unsigned long int	p;
 
-	(*cnt) = (*cnt) + 2;
 	p = (unsigned long int) ptr;
-	ft_putstr("0x", cnt);
 	if (!ptr)
 	{
-		(*cnt)++;
-		write(1, "0", 1);
+		(*cnt) = (*cnt) + 5;
+		write(1, "(nil)", 5);
 	}
-	ft_convert_hex(p, cnt);
+	else
+	{
+		(*cnt) = (*cnt) + 2;
+		write(1, "0x", 2);
+		ft_convert_hex(p, cnt);
+	}
 }

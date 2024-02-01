@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lhaken <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 21:35:18 by lhaken            #+#    #+#             */
+/*   Updated: 2024/02/01 21:41:59 by lhaken           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
@@ -7,7 +19,7 @@
 # include <stdarg.h>
 
 /* PRINTF */
-int	ft_printf(const char *, ...);
+int		ft_printf(const char *format, ...);
 
 /* FORMATTING */
 void	ft_putchar(char c, size_t *cnt);

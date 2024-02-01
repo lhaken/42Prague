@@ -1,26 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lhaken <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/01 21:30:23 by lhaken            #+#    #+#             */
+/*   Updated: 2024/02/01 21:33:31 by lhaken           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-static void ft_handle(va_list vars, char *format, size_t *cnt)
+static void	ft_handle(va_list vars, char *format, size_t *cnt)
 {
 	if (*format == 'c')
-		return ft_putchar(va_arg(vars, int), cnt);
+		return (ft_putchar(va_arg(vars, int), cnt));
 	else if (*format == 's')
-		return ft_putstr(va_arg(vars, char *), cnt);
+		return (ft_putstr(va_arg(vars, char *), cnt));
 	else if (*format == 'p')
-		return ft_putptr(va_arg(vars, void *), cnt);
+		return (ft_putptr(va_arg(vars, void *), cnt));
 	else if (*format == 'd' || *format == 'i')
-		return ft_putnbr(va_arg(vars, int), cnt);
+		return (ft_putnbr(va_arg(vars, int), cnt));
 	else if (*format == 'u')
-		return ft_putunbr(va_arg(vars, unsigned int), cnt);
+		return (ft_putunbr(va_arg(vars, unsigned int), cnt));
 	else if (*format == 'x' || *format == 'X')
-	{	
+	{
 		if (*format == 'x')
-			return ft_puthex(va_arg(vars, unsigned int), "0123456789abcdef", cnt);
+		{
+			return (ft_puthex(va_arg(vars, unsigned int),
+					"0123456789abcdef", cnt));
+		}
 		else
-			return ft_puthex(va_arg(vars, unsigned int), "0123456789ABCDEF", cnt);
+		{
+			return (ft_puthex(va_arg(vars, unsigned int),
+					"0123456789ABCDEF", cnt));
+		}
 	}
 	else if (*format == '%')
-		return ft_putchar(*format, cnt);
+		return (ft_putchar(*format, cnt));
 }
 
 int	ft_printf(const char *format, ...)
