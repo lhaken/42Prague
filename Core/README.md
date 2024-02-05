@@ -7,7 +7,8 @@ I enrolled in the Core in October of 2023.
 ✔️ PASSED
 ⚠️ WORK IN PROGRESS
 
-| Project name | %     | Status |
-| :----------: | :---: | :----: |
-| libft        | 125   | ✔️      |
-| printf       | WIP   | ⚠️      |
+| Project name  | %     | Status |
+| :-----------: | :---: | :----: |
+| libft         | 125   | ✔️      |
+| printf        | WIP   | ⚠️      |
+| get next line | WIP   | ⚠️      |
