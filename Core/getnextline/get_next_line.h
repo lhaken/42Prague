@@ -6,7 +6,7 @@
 /*   By: lhaken <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 10:37:28 by lhaken            #+#    #+#             */
-/*   Updated: 2024/02/05 11:36:14 by lhaken           ###   ########.fr       */
+/*   Updated: 2024/02/05 12:21:25 by lhaken           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@
 # include <unistd.h>
 
 /* GNL */
-char	*get_nexz_line(int fd);
+char	*get_next_line(int fd);
 
 #endif
