@@ -6,7 +6,7 @@
 /*   By: lhaken <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 10:33:17 by lhaken            #+#    #+#             */
-/*   Updated: 2024/02/05 15:04:46 by lhaken           ###   ########.fr       */
+/*   Updated: 2024/02/09 16:19:27 by lhaken           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ char	*get_next_line(int fd)
 	line = (char *) malloc (sizeof(char) * (len));
 	if (!line)
 		return (NULL);
-
 	res_control = read(fd, &read_char, 1);
 	while (res_control > 0)
 	{
