@@ -34,32 +34,12 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-void	*ft_memset(void *s, int c, size_t n)
-{
-	size_t	cnt;
-
-	if (!s)
-	{
-		return (NULL);
-	}
-	cnt = 0;
-	while (cnt < n)
-	{
-		*(char *)(s + cnt) = (char) c;
-		cnt++;
-	}
-	return (s);
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	s = ft_memset(s, 0, n);
-}
-
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*res;
+	size_t	cnt;
 
+	cnt = 0;
 	if (size != 0 && SIZE_MAX / size < nmemb)
 	{
 		return (NULL);
@@ -69,7 +49,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	{
 		return ((void *)(NULL));
 	}
-	ft_bzero(res, nmemb * size);
+	while (cnt < size)
+	{
+		*(char *)(res + cnt) = (char) 0;
+		cnt++;
+	}
 	return (res);
 }
 

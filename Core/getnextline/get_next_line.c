@@ -18,7 +18,7 @@ char	*read_line(char *buff)
 	int		idx;
 
 	idx = 0;
-	if (!buff)
+	if (!*buff) // TODO pointer??
 		return (NULL);
 	while (buff[idx] != '\n' && buff[idx] != '\0')
 		idx++;
@@ -47,7 +47,7 @@ char	*delete_line(char *buff)
 	}
 	else
 	{
-		eo_first_line = ft_strjoin((char*)(eo_first_line + 1), "");
+		eo_first_line = ft_strjoin(eo_first_line + 1, "");
 		free(buff);
 		return (eo_first_line);
 	}
@@ -63,7 +63,7 @@ char	*read_fd(char *buff, int fd)
 	chunk = (char *)ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (!chunk)
 		return (NULL);
-	while (read_len != 0 && ft_strchr(buff, '\n'))
+	while (read_len != 0 && ft_strchr(buff, '\n') == NULL)
 	{
 		read_len = read(fd, chunk, BUFFER_SIZE);
 		if (read_len < 0)
