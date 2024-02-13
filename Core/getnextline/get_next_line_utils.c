@@ -49,7 +49,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	{
 		return ((void *)(NULL));
 	}
-	while (cnt < size)
+	while (cnt < nmemb * size)
 	{
 		*(char *)(res + cnt) = (char) 0;
 		cnt++;

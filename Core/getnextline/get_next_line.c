@@ -18,7 +18,7 @@ char	*read_line(char *buff)
 	int		idx;
 
 	idx = 0;
-	if (!*buff) // TODO pointer??
+	if (!*buff)
 		return (NULL);
 	while (buff[idx] != '\n' && buff[idx] != '\0')
 		idx++;
