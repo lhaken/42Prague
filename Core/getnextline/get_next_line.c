@@ -37,7 +37,7 @@ char	*read_line(char *buff)
 
 char	*delete_line(char *buff)
 {
-	char *eo_first_line;
+	char	*eo_first_line;
 
 	eo_first_line = ft_strchr(buff, '\n');
 	if (eo_first_line == NULL)
