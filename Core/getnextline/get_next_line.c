@@ -12,29 +12,87 @@
 
 #include "get_next_line.h"
 
+char	*read_line(char *buff)
+{
+	char	*res;
+	int		idx;
+
+	idx = 0;
+	if (!buff)
+		return (NULL);
+	while (buff[idx] != '\n' && buff[idx] != '\0')
+		idx++;
+	if (buff[idx] == '\n')
+		idx++;
+	res = (char *)ft_calloc(idx + 1, sizeof(char));
+	if (!res)
+		return (NULL);
+	while (idx > 0)
+	{
+		idx--;
+		res[idx] = buff[idx];
+	}
+	return (res);
+}
+
+char	*delete_line(char *buff)
+{
+	char *eo_first_line;
+
+	eo_first_line = ft_strchr(buff, '\n');
+	if (eo_first_line == NULL)
+	{
+		free(buff);
+		return (NULL);
+	}
+	else
+	{
+		eo_first_line = ft_strjoin((char*)(eo_first_line + 1), "");
+		free(buff);
+		return (eo_first_line);
+	}
+}
+
+char	*read_fd(char *buff, int fd)
+{
+	int		read_len;
+	char	*chunk;
+	char	*used;
+
+	read_len = 42;
+	chunk = (char *)ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	if (!chunk)
+		return (NULL);
+	while (read_len != 0 && ft_strchr(buff, '\n'))
+	{
+		read_len = read(fd, chunk, BUFFER_SIZE);
+		if (read_len < 0)
+		{
+			free(chunk);
+			return (NULL);
+		}
+		chunk[read_len] = '\0';
+		used = buff;
+		if (used == NULL)
+			used = (char *)ft_calloc(1, sizeof(char));
+		buff = ft_strjoin(used, chunk);
+		free(used);
+	}
+	free(chunk);
+	return (buff);
+}
+
 char	*get_next_line(int fd)
 {
-	char	read_char;
-	char	*line;
-	int		res_control;
-	int		len;
+	static char	*buff;
+	char		*line;
 
-	len = 1;
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	line = (char *) malloc (sizeof(char) * (len));
-	if (!line)
+	buff = read_fd(buff, fd);
+	if (!buff)
 		return (NULL);
-	res_control = read(fd, &read_char, 1);
-	while (res_control > 0)
-	{
-		if (read_char == '\n')
-			break ;
-		line[len - 1] = read_char;
-		len++;
-		line = ft_realloc(line, len);
-		res_control = read(fd, &read_char, 1);
-	}
-	line[len - 1] = '\0';
+	line = read_line(buff);
+	buff = delete_line(buff);
 	return (line);
 }

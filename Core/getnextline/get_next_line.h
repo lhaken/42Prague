@@ -16,12 +16,19 @@
 /* INCLUDES */
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
+
+/* BUFFER SIZE */
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 /* GNL */
 char	*get_next_line(int fd);
 
 /* UTILS */
-void	*ft_modmemcpy(void *dest, const void *src, size_t len);
-void	*ft_realloc(void *ptr, size_t size);
+char	*ft_strchr(const char *s, int c);
+void	*ft_calloc(size_t nmemb, size_t size);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
