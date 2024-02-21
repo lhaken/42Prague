@@ -11,4 +11,4 @@ I enrolled in the Core in October of 2023.
 | :-----------: | :---: | :----: |
 | libft         | 125   | ✔️      |
 | printf        | 100   | ✔️      |
-| get next line | WIP   | ⚠️      |
+| get next line | 125   | ✔️      |
