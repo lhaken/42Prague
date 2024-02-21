@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -75,7 +75,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 
-	res = (char *) malloc ((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	res = (char *) malloc (ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!res)
 	{
 		return (NULL);

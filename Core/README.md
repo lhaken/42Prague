@@ -10,5 +10,5 @@ I enrolled in the Core in October of 2023.
 | Project name  | %     | Status |
 | :-----------: | :---: | :----: |
 | libft         | 125   | ✔️      |
-| printf        | WIP   | ⚠️      |
+| printf        | 100   | ✔️      |
 | get next line | WIP   | ⚠️      |

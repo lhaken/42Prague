@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*read_line(char *buff)
 {
@@ -84,15 +84,15 @@ char	*read_fd(char *buff, int fd)
 
 char	*get_next_line(int fd)
 {
-	static char	*buff;
+	static char	*buff[10000];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buff = read_fd(buff, fd);
-	if (!buff)
+	buff[fd] = read_fd(buff[fd], fd);
+	if (!buff[fd])
 		return (NULL);
-	line = read_line(buff);
-	buff = delete_line(buff);
+	line = read_line(buff[fd]);
+	buff[fd] = delete_line(buff[fd]);
 	return (line);
 }
