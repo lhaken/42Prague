@@ -12,3 +12,4 @@ I enrolled in the Core in October of 2023.
 | libft         | 125   | ✔️      |
 | printf        | 100   | ✔️      |
 | get next line | 125   | ✔️      |
+| born2beroot   | WIP   | ⚠️      |
