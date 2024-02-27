@@ -20,3 +20,22 @@ Now your VM should be visible on the left in the VirtualBox window.
 
 1) select "Install" > select a language 🗨️ > select your country 🌍 > select your keyboard layout ⌨️
 2) create a host name: lhaken42 ([your_login]42)
+3) when asked to enter a domain name, leave it empty
+4) create a password for the host name (something you will easily remember)
+5) create a different user (can be anything - lhaken, basic_user etc.)
+6) create a password for the new user (you can use the same one as for your host)
+7) select a time zone
+8) when partitioning a disk select "Guided - use entire disk and set up encrypted LVM" (LVM - Logical Volume Management)
+9) select your disk
+10) from partitioning schemes choose "Separate /home, /var, and /tmp partitions"
+11) select "Yes" when asked about writing to the disk
+12) create an encryption passphrase & verify it on the next screen (again something easy to remember or write it down)
+13) type "max" when asked about the amount of volume group to use for guided partitioning
+14) Finish the partitioning & confirm the writing of the changes
+15) when asked about scaning a CD / DVD for a package manager select "no"
+16) select your country & on the next screen find "deb.debian.org"
+17) leave the HTTP proxy info empty and continue
+18) select "No" when asked about participation in the package usage survey
+19) when selecting software use space to select / unselect items and only select "Standard system utilities" & "SSH server" (be carefull as "Debian desktop environment" and "GNOME" are selected automatically)
+20) when asked about GRUB boot loader select "Yes" & select "/dev/sda" on the next screen
+21) press "Continue" on the "Finish the installation" screen
