@@ -16,7 +16,7 @@ Now your VM should be visible on the left in the VirtualBox window.
 9) in Controller: IDE, click on "Optical drive" 💿 drop down menu > click on "Choose a disk file" > find and select you downloaded Debian image (debian-12.5.0-amd64-netinst.iso) > click on the image file under "Controller: IDE" > click on "OK" 🔵
 10) click on "Start"  🟢
 
-## VM SETUP 🔧
+## VM SETUP ⚙️
 
 1) select "Install" > select a language 🗨️ > select your country 🌍 > select your keyboard layout ⌨️
 2) create a host name: lhaken42 ([your_login]42)
@@ -39,3 +39,31 @@ Now your VM should be visible on the left in the VirtualBox window.
 19) when selecting software use space to select / unselect items and only select "Standard system utilities" & "SSH server" (be carefull as "Debian desktop environment" and "GNOME" are selected automatically)
 20) when asked about GRUB boot loader select "Yes" & select "/dev/sda" on the next screen
 21) press "Continue" on the "Finish the installation" screen
+
+## VM CONFIG 🔧
+
+1) select "Debian DNU / Linux"
+2) type your encryption passphrase
+3) login with your username & password
+
+You can check the partitions you created with `lsblk`.
+
+4) to login as the root, execute `su -`
+5) update & upgrade your system `apt-get update / upgrade`
+6) run `apt install sudo` to get the "superuser do" command
+7) add the created user to the sudo group by entering `usermod -aG sudo [user name]`
+8) type `sudo visudo` & under "#User privilege specification" write "[user name]  ALL=(ALL) ALL"
+
+Now it's time for the SSH!
+
+9) install the ssh server by executing `sudo apt install openssh-server`
+10) access the ssh server config file by typing `sudo nano /etc/ssh/sshd_config`
+11) replace line "#Port 22" with "Port 4242" & save the config
+12) restart the ssh server with `sudo service ssh restart`
+
+Protect yourself with a firewall!
+
+13) to install the firewall run `apt-get install ufw`
+14) start the firewall `sudo ufw enable` (also enables it on startup)
+15) configure the rules `sudo ufw allow ssh / 4242`
+
