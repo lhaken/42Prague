@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   client.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lhaken <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/22 11:47:32 by lhaken            #+#    #+#             */
+/*   Updated: 2024/04/22 11:48:36 by lhaken           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minitalk.h"
 
 static int	ft_atoi(char *str)
@@ -36,21 +48,21 @@ static void	ft_byte_encoder(int pid, char c)
 
 	byte_idx = 8;
 	char_to_num = c;
-	while (--byte_idx >= 0) // byte rewrite
+	while (--byte_idx >= 0)
 	{
-		if ((char_to_num & 1) == 1) // bitwise operation, a logical AND but on a bit
+		if ((char_to_num & 1) == 1)
 			byte[byte_idx] = 1;
 		else if (char_to_num == 0 || (char_to_num & 1) == 0)
 			byte[byte_idx] = 0;
 		if (char_to_num > 0)
-			char_to_num >>= 1; // bitwise operation, right shift -> lowering the number
+			char_to_num >>= 1;
 	}
 	while (++byte_idx < 8)
 	{
 		if (byte[byte_idx] == 0)
-			kill(pid, SIGUSR1); // SIGUSR1 == 0
+			kill(pid, SIGUSR1);
 		else
-			kill(pid, SIGUSR2); // SIGUSR2 == 1
+			kill(pid, SIGUSR2);
 		usleep(50);
 	}
 }
