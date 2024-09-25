@@ -63,7 +63,7 @@ static void	ft_byte_encoder(int pid, char c)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(50);
+		usleep(1000);
 	}
 }
 
