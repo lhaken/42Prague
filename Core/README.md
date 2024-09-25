@@ -13,4 +13,5 @@ I enrolled in the Core in October of 2023.
 | printf        | 100   | ✔️     |
 | get next line | 125   | ✔️     |
 | born2beroot   | 105   | ✔️     |
-| minitalk      | WIP   | ⚠️     |
+| minitalk      | 100   | ✔️     |
+| push_swap     | WIP   | ⚠️     |
