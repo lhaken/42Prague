@@ -242,6 +242,32 @@ int	check_sort(t_stack *stack)
 	return (1);
 }
 
+int	get_last(t_stack **stack) // do i need size?
+{
+	while ((*stack)->next != NULL)
+	{
+		(*stack) = (*stack)->next;
+	}
+	return ((*stack)->data);
+}
+
+int	get_lowest(t_stack **stack)
+{
+	int	low;
+	
+	low = (*stack)->data;
+	while ((*stack)->next != NULL)
+	{
+		(*stack) = (*stack)->next;
+		if ((*stack)->data < low)
+			low = (*stack)->data;
+	}
+	return (low);
+}
+
+void	push_low(t_stack **stack_a, t_stack **stack_b)
+{}
+
 /* SORTS */
 void	small_sort(t_stack **stack)
 {
@@ -270,15 +296,20 @@ void	small_sort(t_stack **stack)
 		op_swap(stack);
 }
 
-void	med_sort(t_stack **stack_a, t_stack **stack_b, int size)
+void	med_sort(t_stack **stack_a, t_stack **stack_b, int size) //for 4 or 5 args
+{
+	
+}
 
 void	big_sort(t_stack **stack_a, t_stack **stack_b, int size)
 {
-	if (size == 4)
+	/*if (size == 4)
 	{
 		op_push(stack_a, stack_b);
 		small_sort(stack_a);
-	}
+	}*/
+	int	mid;
+
 }
 
 void	sort(t_stack **stack_a, t_stack **stack_b)
@@ -297,7 +328,7 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 	else if (size == 3)
 		small_sort(stack_a);
 	else if (size >= 4 && size <= 5)
-		big_sort(stack_a, stack_b, size);
+		med_sort(stack_a, stack_b, size);
 	write(1, "sorted\n", 8);
 }
 
@@ -326,7 +357,7 @@ int	is_valid(char *str)
 {
 	while (*str != '\0')
 	{
-		if ((*str < '0' && *str > '9') && *str != '-') // jak ze tohle KURVA funguje?!?!
+		if ((*str < '0' && *str > '9') && *str != '-')
 		{
 			return (0);
 		}
