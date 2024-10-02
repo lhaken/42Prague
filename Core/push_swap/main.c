@@ -242,31 +242,31 @@ int	check_sort(t_stack *stack)
 	return (1);
 }
 
-int	get_last(t_stack **stack) // do i need size?
+int	get_last(t_stack *stack) // do i need size?
 {
-	while ((*stack)->next != NULL)
+	while ((stack)->next != NULL)
 	{
-		(*stack) = (*stack)->next;
+		(stack) = (stack)->next;
 	}
-	return ((*stack)->data);
+	return ((stack)->data);
 }
 
-int	get_lowest(t_stack **stack)
+int	get_lowest(t_stack *stack) // low as return arg, return val -> pos, to determin if rot or rev_rot for push_low()
 {
 	int	low;
 	
-	low = (*stack)->data;
-	while ((*stack)->next != NULL)
+	low = (stack)->data;
+	while ((stack)->next != NULL)
 	{
-		(*stack) = (*stack)->next;
-		if ((*stack)->data < low)
-			low = (*stack)->data;
+		(stack) = (stack)->next;
+		if ((stack)->data < low)
+			low = (stack)->data;
 	}
 	return (low);
 }
 
-void	push_low(t_stack **stack_a, t_stack **stack_b)
-{}
+/*void	push_low(t_stack **stack_a, t_stack **stack_b)
+{}*/
 
 /* SORTS */
 void	small_sort(t_stack **stack)
@@ -399,7 +399,10 @@ int	main(int argc, char **argv)
 		exit(1);
 	}
 	init_stack(&stack_a, argv, argc);
-	sort(&stack_a, &stack_b);
+	printf("low: %d\n", get_lowest(stack_a));
+	printf("last: %d\n", get_last(stack_a));
+	printf("low: %d\n", get_lowest(stack_a));
+	// sort(&stack_a, &stack_b);
 	/*printf("A\n=\n");
 	print_stack(&stack_a);
 	printf("B\n=\n");
