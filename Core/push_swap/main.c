@@ -254,7 +254,7 @@ int	get_last(t_stack *stack) // do i need size?
 int	get_lowest(t_stack *stack) // low as return arg, return val -> pos, to determin if rot or rev_rot for push_low()
 {
 	int	low;
-	
+
 	low = (stack)->data;
 	while ((stack)->next != NULL)
 	{
@@ -296,9 +296,9 @@ void	small_sort(t_stack **stack)
 		op_swap(stack);
 }
 
-void	med_sort(t_stack **stack_a, t_stack **stack_b, int size) //for 4 or 5 args
+void	med_sort(t_stack **stack_a, t_stack **stack_b, int size) // for 4 or 5 args
 {
-	
+	exit(0);
 }
 
 void	big_sort(t_stack **stack_a, t_stack **stack_b, int size)
@@ -333,7 +333,7 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 }
 
 /* ERRORS */
-int check_dup(int argc, char **argv)
+int	check_dup(int argc, char **argv)
 {
 	int	x;
 	int	y;
@@ -345,7 +345,7 @@ int check_dup(int argc, char **argv)
 		while (y < argc)
 		{
 			if (ft_atoi(argv[x]) == ft_atoi(argv[y]))
-				return (1); 
+				return (1);
 			y++;
 		}
 		x++;
