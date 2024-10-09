@@ -251,7 +251,7 @@ int	get_last(t_stack *stack) // do i need size?
 	return ((stack)->data);
 }
 
-void check_last(t_stack **stack, int low, int size)
+void	check_last(t_stack **stack, int low, int size)
 {
 	if (size == 5)
 	{
@@ -299,10 +299,10 @@ void	push_lowest(t_stack **stack_a, t_stack **stack_b, int size)
 	}
 }
 
-void worst_case(t_stack **stack_a, t_stack **stack_b)
+void	worst_case(t_stack **stack_a, t_stack **stack_b)
 {
 	if ((*stack_b)->data > (*stack_a)->next->data
-	&& (*stack_b)->data < get_last(*stack_a))
+		&& (*stack_b)->data < get_last(*stack_a))
 	{
 		op_rev_rotate(stack_a);
 		op_push(stack_b, stack_a);
@@ -353,7 +353,7 @@ void	med_sort(t_stack **stack_a, t_stack **stack_b, int size) // for 4 or 5 args
 	worst_case(stack_a, stack_b);
 	op_push(stack_b, stack_a);
 	if ((*stack_a)->data > (*stack_a)->next->data
-	&& (*stack_a)->data < (*stack_a)->next->next->data)
+		&& (*stack_a)->data < (*stack_a)->next->next->data)
 		op_swap(stack_a);
 	else if ((*stack_a)->data > get_last(*stack_a))
 		op_rotate(stack_a);
@@ -367,8 +367,6 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b, int size)
 		op_push(stack_a, stack_b);
 		small_sort(stack_a);
 	}*/
-	int	mid;
-
 }
 
 void	sort(t_stack **stack_a, t_stack **stack_b)
@@ -441,8 +439,8 @@ int	check_valid(int argc, char **argv)
 	return (0);
 }
 
-int check_error(int argc, char **argv)
-{	// TODO CHECK FOR HIGHER THAN MAX INT && FIX VAL ERROR 
+int	check_error(int argc, char **argv) // TODO CHECK FOR HIGHER THAN MAX INT && FIX VAL ERROR
+{
 	if (argc <= 1)
 	{
 		write(1, "sorted\n", 8);
@@ -480,4 +478,5 @@ int	main(int argc, char **argv)
 	print_stack(&stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
+	printf("DONE");
 }
