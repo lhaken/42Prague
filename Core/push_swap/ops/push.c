@@ -1,8 +1,14 @@
-#include "../pushswap.h"
+# include "operations.h"
 
-void	push_stack(t_stack **stack, int data)
+void	op_push(t_stack **src, t_stack **dest)
 {
-	t_stack	*node;
+	t_stack	*temp;
 
-	node = create_node(data)
+	if (get_stack_size(src) == 0)
+		return ;
+	temp = *src;
+	*src = (*src)->next;
+	move_node(dest, temp->data);
+	write(1, "push\n", 6); // TODO - correct letter
+	free(temp);
 }

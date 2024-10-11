@@ -3,13 +3,15 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include "./ops/operations.h"
+# include "./utils/utils.h"
 
 /* LINKED LIST */
-/*typedef struct s_stack
+typedef struct s_stack
 {
 	int				data;
 	struct s_stack	*next;
-}	t_stack;*/
+}	t_stack;
 
 /* MAIN */
 int		main(int argc, char **argv);

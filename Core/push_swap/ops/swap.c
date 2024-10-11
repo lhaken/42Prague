@@ -1,16 +1,27 @@
-#include "../pushswap.h"
+# include "operations.h"
 
-void	swap_stack(t_stack **stack)
+void	op_swap(t_stack **stack)
 {
 	int	temp;
 
-	temp = (*stack)->data;
-	(*stack)->data = (*stack)->next->data;
-	(*stack)->next->data = temp;
+	if (get_stack_size(stack) > 1)
+	{
+		temp = (*stack)->data;
+		(*stack)->data = (*stack)->next->data;
+		(*stack)->next->data = temp;
+		write(1, "swap\n", 6); // TODO - correct letter
+	}
+	else
+	{
+		return ;
+	}
 }
 
-void	swap(t_stack **stack_a, t_stack **stack_b)
+void	op_swap_both(t_stack **stack_a, t_stack **stack_b)
 {
-	swap_stack(stack_a);
-	swap_stack(stack_b);
+	if (get_stack_size(stack_a) < 2 || get_stack_size(stack_b) < 2)
+		return ;
+	op_swap(stack_a);
+	op_swap(stack_b);
+	write(1, "ss\n", 3);
 }
