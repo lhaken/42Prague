@@ -1,20 +1,20 @@
-//#include "pushswap.h"
+#include "pushswap.h"
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 
 /* STRUCT DEF */
-typedef struct s_stack
+/*typedef struct s_stack
 {
 	int				data;
 	struct s_stack	*next;
-}	t_stack;
+}	t_stack;*/
 
 /* PROTOTYPES */
-int	get_stack_size(t_stack **stack);
+/*int	get_stack_size(t_stack **stack);*/
 
 /* LIBFT */
-static int	ft_isspace(int c)
+/*static int	ft_isspace(int c)
 {
 	if (c == ' ' || c == '\f' || c == '\n'
 		|| c == '\r' || c == '\t' || c == '\v')
@@ -48,10 +48,10 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	}
 	return (res * minus);
-}
+}*/
 
 /* STRUCT MANAGEMENT */
-t_stack	*create_node(int data)
+/*t_stack	*create_node(int data)
 {
 	t_stack	*node;
 
@@ -90,10 +90,10 @@ void	free_stack(t_stack **stack)
 		free(*stack);
 		*stack = next;
 	}
-}
+}*/
 
 /* OPS */
-void	op_swap(t_stack **stack)
+/*void	op_swap(t_stack **stack)
 {
 	int	temp;
 
@@ -157,7 +157,7 @@ void	op_rotate_both(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	op_rotate(stack_a);
 	op_rotate(stack_b);
-	write(1, "rotate both\n", 13);
+	write(1, "rr\n", 3);
 }
 
 void	op_rev_rotate(t_stack **stack)
@@ -178,8 +178,17 @@ void	op_rev_rotate(t_stack **stack)
 	write(1, "rev rotate\n", 12);
 }
 
+void	op_rev_rotate_both(t_stack **stack_a, t_stack **stack_b)
+{
+	if (get_stack_size(stack_a) < 2 || get_stack_size(stack_b) < 2)
+		return ;
+	op_rev_rotate(stack_a);
+	op_rev_rotate(stack_b);
+	write(1, "rrr\n", 3);
+}*/
+
 /* DEBUG */
-void	print_stack(t_stack **stack)
+/*void	print_stack(t_stack **stack)
 {
 	t_stack	*curr;
 
@@ -309,7 +318,7 @@ void	worst_case(t_stack **stack_a, t_stack **stack_b)
 		op_rotate(stack_a);
 		op_rotate(stack_a);
 	}
-}
+}*/
 
 /* SORTS */
 void	small_sort(t_stack **stack)
@@ -360,22 +369,18 @@ void	med_sort(t_stack **stack_a, t_stack **stack_b, int size) // for 4 or 5 args
 	op_push(stack_b, stack_a);
 }
 
-void	big_sort(t_stack **stack_a, t_stack **stack_b, int size)
+/*void	big_sort(t_stack **stack_a, t_stack **stack_b, int size)
 {
-	/*if (size == 4)
-	{
-		op_push(stack_a, stack_b);
-		small_sort(stack_a);
-	}*/
-}
+	int	*list;
+}*/
 
 void	sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
-	int	low;
+	//int	low;
 
 	size = get_stack_size(stack_a);
-	low = (*stack_a)->data;
+	//low = (*stack_a)->data;
 	if (check_sort(*stack_a) && get_stack_size(stack_b) == 0)
 	{
 		free_stack(stack_a);
@@ -392,7 +397,7 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 }
 
 /* ERRORS */
-int	check_dup(int argc, char **argv)
+/*int	check_dup(int argc, char **argv)
 {
 	int	x;
 	int	y;
@@ -456,7 +461,7 @@ int	check_error(int argc, char **argv) // TODO CHECK FOR HIGHER THAN MAX INT && 
 		printf("Error - val\n");
 		exit(1);
 	}
-}
+}*/
 
 /* MAIN */
 int	main(int argc, char **argv)

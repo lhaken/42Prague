@@ -1,10 +1,9 @@
 #ifndef PUSHSWAP_H
 # define PUSHSWAP_H
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "./ops/operations.h"
-# include "./utils/utils.h"
+#include <stdio.h> // TODO - delete (i think lol - only for printf testing)
+#include <unistd.h>
+#include <stdlib.h>
 
 /* LINKED LIST */
 typedef struct s_stack
@@ -13,13 +12,10 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
+# include "./ops/operations.h"
+# include "./utils/utils.h"
+
 /* MAIN */
 int		main(int argc, char **argv);
-
-/* OPS */
-void	swap_stack(t_stack **stack);
-void	swap(t_stack **stack_a, t_stack **stack_b);
-
-/* UTILS */
 
 #endif

@@ -2,8 +2,9 @@
 # define OPERATIONS_H
 
 /* INCLUDES */
+# include <unistd.h>
+# include <stdlib.h>
 # include "../pushswap.h"
-# include "../utils/utils.h"
 
 /* SA and SB*/
 void	op_swap(t_stack **stack);
