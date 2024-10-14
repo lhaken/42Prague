@@ -8,7 +8,7 @@ UTLDIR = ./utils
 
 HEADERS = $(SRCDIR)/push_swap.h $(OPSDIR)/operations.h $(UTLDIR)/utils.h
 
-SRC = $(SRCDIR)/main.c $(OPSDIR)/push.c $(OPSDIR)/reverse_rotate.c $(OPSDIR)/rotate.c $(OPSDIR)/swap.c $(UTLDIR)/errors.c $(UTLDIR)/lib.c $(UTLDIR)/struct_management.c $(UTLDIR)/utils1.c
+SRC = $(SRCDIR)/main.c $(OPSDIR)/push.c $(OPSDIR)/reverse_rotate.c $(OPSDIR)/rotate.c $(OPSDIR)/swap.c $(UTLDIR)/errors.c $(UTLDIR)/lib.c $(UTLDIR)/struct_management.c $(UTLDIR)/utils1.c $(UTLDIR)/utils2.c $(UTLDIR)/utils3.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)

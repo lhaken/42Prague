@@ -47,7 +47,7 @@ int	check_valid(int argc, char **argv)
 	return (0);
 }
 
-int	check_error(int argc, char **argv)
+void	check_error(int argc, char **argv)
 // TODO CHECK FOR HIGHER THAN MAX INT && FIX VAL ERROR
 {
 	if (argc <= 1)
@@ -65,5 +65,5 @@ int	check_error(int argc, char **argv)
 		printf("Error - val\n");
 		exit(1);
 	}
-	exit(0);
+	return ;
 }

@@ -356,7 +356,7 @@ void	med_sort(t_stack **stack_a, t_stack **stack_b, int size) // for 4 or 5 args
 	if (size == 4)
 	{
 		op_push(stack_b, stack_a);
-		write(1, "sorted\n", 8);
+		write(1, "MED sorted\n", 8);
 		return ;
 	}
 	worst_case(stack_a, stack_b);
@@ -369,22 +369,48 @@ void	med_sort(t_stack **stack_a, t_stack **stack_b, int size) // for 4 or 5 args
 	op_push(stack_b, stack_a);
 }
 
-/*void	big_sort(t_stack **stack_a, t_stack **stack_b, int size)
+void	big_sort(t_stack **stack_a, t_stack **stack_b, int size)
 {
 	int	*list;
-}*/
+	int	ctrl;
+	int	mid;
+	int	last;
+	int idx;
+
+	idx = size - 1;
+	last = 0;
+	list = listize(*stack_a, size);
+	if (size <= 100)
+		ctrl = 2;
+	else
+		ctrl = 1;
+	while (get_stack_size(stack_a) > 0 && ctrl <= 10)
+	{
+		if  (ctrl == 10)
+			mid = list[idx];
+		else
+			mid = list[(size / 10) * ctrl];
+		move_chunks(stack_a, stack_b, mid, last);
+		last = mid;
+		if (size <= 100)
+			ctrl += 2;
+		else
+			ctrl++;
+	}
+	while (get_stack_size(stack_b) > 0)
+		idx = push_back(stack_a, stack_b, list, idx);
+	free(list);
+}
 
 void	sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
-	//int	low;
 
 	size = get_stack_size(stack_a);
-	//low = (*stack_a)->data;
 	if (check_sort(*stack_a) && get_stack_size(stack_b) == 0)
 	{
 		free_stack(stack_a);
-		write(1, "sorted\n", 8);
+		write(1, "2nd sorted\n", 12);
 		exit (0);
 	}
 	if (size == 2 && check_sort(*stack_a) != 1)
@@ -393,7 +419,9 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 		small_sort(stack_a);
 	else if (size >= 4 && size <= 5)
 		med_sort(stack_a, stack_b, size);
-	write(1, "sorted\n", 8);
+	else
+		big_sort(stack_a, stack_b, size);
+	write(1, "1st sorted\n", 12);
 }
 
 /* ERRORS */

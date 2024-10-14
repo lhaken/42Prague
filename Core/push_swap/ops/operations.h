@@ -2,8 +2,6 @@
 # define OPERATIONS_H
 
 /* INCLUDES */
-# include <unistd.h>
-# include <stdlib.h>
 # include "../pushswap.h"
 
 /* SA and SB*/

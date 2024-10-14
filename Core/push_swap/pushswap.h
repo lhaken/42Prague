@@ -1,9 +1,9 @@
 #ifndef PUSHSWAP_H
 # define PUSHSWAP_H
 
-#include <stdio.h> // TODO - delete (i think lol - only for printf testing)
-#include <unistd.h>
-#include <stdlib.h>
+# include <stdio.h> // TODO - delete (i think lol - only for printf testing)
+# include <unistd.h>
+# include <stdlib.h>
 
 /* LINKED LIST */
 typedef struct s_stack
