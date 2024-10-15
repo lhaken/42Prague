@@ -31,6 +31,6 @@ void	push_lowest(t_stack **stack_a, t_stack **stack_b, int size);
 void	worst_case(t_stack **stack_a, t_stack **stack_b);
 int		*listize(t_stack *stack_a, int size);
 void	move_chunks(t_stack **stack_a, t_stack **stack_b, int mid, int idx);
-void	push_back(t_stack **stack_a, t_stack **stack_b, int *list, int *size);
+int	push_back(t_stack **stack_a, t_stack **stack_b, int *list, int size);
 
 #endif

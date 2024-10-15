@@ -52,7 +52,7 @@ void	check_error(int argc, char **argv)
 {
 	if (argc <= 1)
 	{
-		write(1, "sorted\n", 8);
+		write(1, "not args\n", 9);
 		exit(0);
 	}
 	if (check_dup(argc, argv))
