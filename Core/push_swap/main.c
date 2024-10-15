@@ -398,7 +398,7 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b, int size)
 			ctrl++;
 	}
 	while (get_stack_size(stack_b) > 0)
-		idx = push_back(stack_a, stack_b, list, idx);
+		push_back(stack_a, stack_b, list, &idx);
 	free(list);
 }
 

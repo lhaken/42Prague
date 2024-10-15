@@ -42,18 +42,16 @@ static int	shortest(t_stack *stack, int data)
 	return (steps);
 }
 
-int	push_back(t_stack **stack_a, t_stack **stack_b, int *list, int size)
+void	push_back(t_stack **stack_a, t_stack **stack_b, int *list, int *size)
 {
 	int steps;
-	int res;
 	
-	res = size;
-	steps = shortest(*stack_b, list[res]);
-	while ((*stack_b)->data != list[res])
+	steps = shortest(*stack_b, list[*size]);
+	while ((*stack_b)->data != list[*size])
 	{
 		if ((*stack_b)->next)
 		{
-			if((*stack_b)->next->data == list[res])
+			if((*stack_b)->next->data == list[*size])
 			{
 				op_swap(stack_b); // WRITE MOVE
 				break ;
@@ -64,7 +62,6 @@ int	push_back(t_stack **stack_a, t_stack **stack_b, int *list, int size)
 		else
 			op_rotate(stack_b); // WRITE MOVE
 	}
-	res--;
+	*size--;
 	op_push(stack_b, stack_a); // WRITE MOVE
-	return (res);
 }
