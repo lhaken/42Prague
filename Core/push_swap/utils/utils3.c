@@ -65,7 +65,6 @@ int	push_back(t_stack **stack_a, t_stack **stack_b, int *list, int size)
 			op_rotate(stack_b); // WRITE MOVE
 	}
 	res--;
-	write(1, "FP\n", 3);
 	op_push(stack_b, stack_a); // WRITE MOVE
 	return (res);
 }
