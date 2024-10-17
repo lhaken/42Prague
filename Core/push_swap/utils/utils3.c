@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils3.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lhaken <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/17 15:49:38 by lhaken            #+#    #+#             */
+/*   Updated: 2024/10/17 15:50:32 by lhaken           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./utils.h"
 
 void	move_chunks(t_stack **stack_a, t_stack **stack_b, int mid, int idx)
@@ -25,7 +37,7 @@ static int	shortest(t_stack *stack, int data)
 {
 	int	size;
 	int	idx;
-	int steps;
+	int	steps;
 
 	size = get_stack_size(&stack);
 	idx = 0;
@@ -45,15 +57,15 @@ static int	shortest(t_stack *stack, int data)
 int	push_back(t_stack **stack_a, t_stack **stack_b, int *list, int size)
 {
 	int	res;
-	int steps;
-	
+	int	steps;
+
 	res = size;
 	steps = shortest(*stack_b, list[res]);
 	while ((*stack_b)->data != list[res])
 	{
 		if ((*stack_b)->next)
 		{
-			if((*stack_b)->next->data == list[res])
+			if ((*stack_b)->next->data == list[res])
 			{
 				op_swap(stack_b); // WRITE MOVE
 				break ;

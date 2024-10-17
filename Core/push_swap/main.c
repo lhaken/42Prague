@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lhaken <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/17 15:41:43 by lhaken            #+#    #+#             */
+/*   Updated: 2024/10/17 15:43:59 by lhaken           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -31,7 +43,7 @@ void	small_sort(t_stack **stack)
 		op_swap(stack);
 }
 
-void	med_sort(t_stack **stack_a, t_stack **stack_b, int size) // for 4 or 5 args
+void	med_sort(t_stack **stack_a, t_stack **stack_b, int size)
 {
 	check_last(stack_a, get_lowest(*stack_a), size);
 	push_lowest(stack_a, stack_b, size);
@@ -52,13 +64,13 @@ void	med_sort(t_stack **stack_a, t_stack **stack_b, int size) // for 4 or 5 args
 	op_push(stack_b, stack_a);
 }
 
-void	big_sort(t_stack **stack_a, t_stack **stack_b, int size)
+void	big_sort(t_stack **stack_a, t_stack **stack_b, int size) // TOO MANY LINES
 {
 	int	*list;
 	int	ctrl;
 	int	mid;
 	int	last;
-	int idx;
+	int	idx;
 
 	idx = size - 1;
 	last = 0;
@@ -69,7 +81,7 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b, int size)
 		ctrl = 1;
 	while (get_stack_size(stack_a) > 0 && ctrl <= 10)
 	{
-		if  (ctrl == 10)
+		if (ctrl == 10)
 			mid = list[idx];
 		else
 			mid = list[(size / 10) * ctrl];

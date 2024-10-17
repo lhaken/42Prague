@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lhaken <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/17 15:48:43 by lhaken            #+#    #+#             */
+/*   Updated: 2024/10/17 15:49:11 by lhaken           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef UTILS_H
 # define UTILS_H
 
@@ -31,6 +43,6 @@ void	push_lowest(t_stack **stack_a, t_stack **stack_b, int size);
 void	worst_case(t_stack **stack_a, t_stack **stack_b);
 int		*listize(t_stack *stack_a, int size);
 void	move_chunks(t_stack **stack_a, t_stack **stack_b, int mid, int idx);
-int	push_back(t_stack **stack_a, t_stack **stack_b, int *list, int size);
+int		push_back(t_stack **stack_a, t_stack **stack_b, int *list, int size);
 
 #endif

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils2.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lhaken <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/17 15:46:28 by lhaken            #+#    #+#             */
+/*   Updated: 2024/10/17 15:48:13 by lhaken           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./utils.h"
 
-int	get_lowest(t_stack *stack) // low as return arg, return val -> pos, to determin if rot or rev_rot for push_low()
+int	get_lowest(t_stack *stack)
 {
 	int	low;
 
@@ -47,8 +59,8 @@ void	worst_case(t_stack **stack_a, t_stack **stack_b)
 
 static void	sort_list(int *list, int size)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < size - 1)
@@ -67,11 +79,11 @@ static void	sort_list(int *list, int size)
 int	*listize(t_stack *stack_a, int size)
 {
 	t_stack	*cur;
-	int	*res;
-	int	idx;
+	int		*res;
+	int		idx;
 
 	cur = stack_a;
-	res = (int*) malloc (sizeof(int) * size + 1);
+	res = (int *) malloc (sizeof(int) * size + 1);
 	idx = 0;
 	if (!res)
 		return (0);
