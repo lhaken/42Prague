@@ -12,7 +12,7 @@
 
 #include "operations.h"
 
-void	op_push(t_stack **src, t_stack **dest)
+void	op_push(t_stack **src, t_stack **dest, char let)
 {
 	t_stack	*temp;
 
@@ -21,6 +21,6 @@ void	op_push(t_stack **src, t_stack **dest)
 	temp = *src;
 	*src = (*src)->next;
 	move_node(dest, temp->data);
-	write(1, "push\n", 6); // TODO - correct letter
+	write_op("p", let);
 	free(temp);
 }

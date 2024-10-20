@@ -18,19 +18,21 @@ void	move_chunks(t_stack **stack_a, t_stack **stack_b, int mid, int idx)
 
 	hold = (*stack_a)->data;
 	idx = mid - idx;
-	op_rotate(stack_a); // WRITE MOVE
+	op_rotate(stack_a, 'a'); // THIS SHOUDLNT BE HERE
 	while ((*stack_a)->data != hold && idx > 0)
 	{
 		if ((*stack_a)->data <= mid)
 		{
-			op_push(stack_a, stack_b); // WRITE MOVE
+			op_push(stack_a, stack_b, 'b');
 			idx--;
 		}
 		else
-			op_rotate(stack_a); // WRITE MOVE
+		{
+			op_rotate(stack_a, 'a');
+		}
 	}
 	if ((*stack_a)->data <= mid)
-		op_push(stack_a, stack_b); // WRITE MOVE
+		op_push(stack_a, stack_b, 'b');
 }
 
 static int	shortest(t_stack *stack, int data)
@@ -67,16 +69,17 @@ int	push_back(t_stack **stack_a, t_stack **stack_b, int *list, int size)
 		{
 			if ((*stack_b)->next->data == list[res])
 			{
-				op_swap(stack_b); // WRITE MOVE
+				op_swap(stack_b, 'b'); // WRITE MOVE
 				break ;
 			}
 		}
+		printf("steps: %d\n", steps);
 		if (steps < 0)
-			op_rev_rotate(stack_b); // WRITE MOVE
+			op_rev_rotate(stack_b, 'b'); // WRITE MOVE
 		else
-			op_rotate(stack_b); // WRITE MOVE
+			op_rotate(stack_b, 'b'); // WRITE MOVE
 	}
 	res--;
-	op_push(stack_b, stack_a); // WRITE MOVE
+	op_push(stack_b, stack_a, 'a'); // WRITE MOVE
 	return (res);
 }

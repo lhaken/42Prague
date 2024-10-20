@@ -33,8 +33,22 @@ void	move_node(t_stack **stack, int data)
 
 void	init_stack(t_stack **stack, char **argv, int idx)
 {
+	char **nums;
+	
 	idx = idx - 1;
-	while (idx >= 1)
+	if (idx == 1)
+	{
+		nums = ft_split(argv[1], ' '); // HAVE TO MAKE THIS WORK
+		while (*nums)
+		{
+			move_node(stack, ft_atoi(*nums));
+			nums++;
+		}
+		printf("A:\n");
+		print_stack(stack);
+		return ;
+	}
+	while (idx >= 2)
 	{
 		move_node(stack, ft_atoi(argv[idx]));
 		idx--;

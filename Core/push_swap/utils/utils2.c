@@ -35,13 +35,13 @@ void	push_lowest(t_stack **stack_a, t_stack **stack_b, int size)
 	{
 		if ((*stack_a)->data == get_lowest(*stack_a))
 		{
-			op_push(stack_a, stack_b);
+			op_push(stack_a, stack_b, 'b');
 			if (size == 5)
-				op_push(stack_a, stack_b);
+				op_push(stack_a, stack_b, 'b');
 			cnt++;
 		}
 		else
-			op_rotate(stack_a);
+			op_rotate(stack_a, 'a');
 	}
 }
 
@@ -50,10 +50,10 @@ void	worst_case(t_stack **stack_a, t_stack **stack_b)
 	if ((*stack_b)->data > (*stack_a)->next->data
 		&& (*stack_b)->data < get_last(*stack_a))
 	{
-		op_rev_rotate(stack_a);
-		op_push(stack_b, stack_a);
-		op_rotate(stack_a);
-		op_rotate(stack_a);
+		op_rev_rotate(stack_a, 'a');
+		op_push(stack_b, stack_a, 'a');
+		op_rotate(stack_a, 'a');
+		op_rotate(stack_a, 'a');
 	}
 }
 

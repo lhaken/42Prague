@@ -19,6 +19,7 @@
 /* LIB */
 int		ft_atoi(const char *nptr);
 void	ft_swap(int *a, int *b);
+char	**ft_split(char const *s, char c);
 
 /* STRUCT MANAGEMENT */
 t_stack	*create_node(int data);

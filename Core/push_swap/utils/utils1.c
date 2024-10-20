@@ -89,12 +89,12 @@ void	check_last(t_stack **stack, int low, int size)
 	if (size == 5)
 	{
 		if (low == get_last(*stack))
-			op_rev_rotate(stack);
+			op_rev_rotate(stack, 'a');
 	}
 	if (low == (*stack)->next->next->next->data)
 	{
-		op_rev_rotate(stack);
+		op_rev_rotate(stack, 'a');
 		if (size == 5)
-			op_rev_rotate(stack);
+			op_rev_rotate(stack, 'a');
 	}
 }

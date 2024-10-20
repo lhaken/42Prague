@@ -12,7 +12,7 @@
 
 #include "operations.h"
 
-void	op_rev_rotate(t_stack **stack)
+void	op_rev_rotate(t_stack **stack, char let)
 {
 	t_stack	*new_last;
 
@@ -27,14 +27,14 @@ void	op_rev_rotate(t_stack **stack)
 		free(new_last->next);
 		new_last->next = NULL;
 	}
-	write(1, "rev rotate\n", 12); // TODO - correct letter
+	write_op("rr", let);
 }
 
 void	op_rev_rotate_both(t_stack **stack_a, t_stack **stack_b)
 {
 	if (get_stack_size(stack_a) < 2 || get_stack_size(stack_b) < 2)
 		return ;
-	op_rev_rotate(stack_a);
-	op_rev_rotate(stack_b);
+	op_rev_rotate(stack_a, 'x');
+	op_rev_rotate(stack_b, 'x');
 	write(1, "rrr\n", 3);
 }
